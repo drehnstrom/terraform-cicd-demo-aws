@@ -24,7 +24,7 @@ variable "instance_type" {
 variable "instance_count" {
   description = "Number of instances to provision."
   type        = number
-  default     = 0
+  default     = 1
 
   validation {
     condition     = var.instance_count >= 0 && var.instance_count <= 5
