@@ -1,7 +1,7 @@
 variable "project" {
   description = "The name of the current project."
   type        = string
-  default     = "My Project"
+  default     = "space-invaders"
 }
 
 variable "region" {
