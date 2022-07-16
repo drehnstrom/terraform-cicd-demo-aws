@@ -19,7 +19,7 @@ resource "aws_security_group" "allow-http" {
 }
 
 resource "aws_instance" "vm" {
-  count         = 1
+  count         = var.instance_count
   ami           = var.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow-http.id]
