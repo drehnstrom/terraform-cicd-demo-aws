@@ -1,7 +1,7 @@
 variable "project" {
   description = "The name of the current project."
   type        = string
-  default     = "My Project"
+  default     = "space-invaders"
 }
 
 variable "region" {
@@ -24,7 +24,7 @@ variable "instance_type" {
 variable "instance_count" {
   description = "Number of instances to provision."
   type        = number
-  default     = 0
+  default     = 2
 
   validation {
     condition     = var.instance_count >= 0 && var.instance_count <= 5
