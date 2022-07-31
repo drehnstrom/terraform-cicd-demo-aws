@@ -25,9 +25,9 @@ This repository demonstrates using Github Actions to create a CI/CD pipeline tha
 
 1. Once the secrets are created, navigate to the file `space-invaders/provider.tf` in your GitHub repository. 
 
-1. In the `backend` configuration, change the `bucket` value to the name of the bucket you created earlier. 
+1. In the `backend` configuration, change the `bucket` value to the name of the bucket you created earlier. Also, make sure the region is set to the region you are using.
 
-1. Now open the `space-invaders/terraform.tfvars` file and make sure the region is set to the region you are using. 
+1. Now open the `space-invaders/terraform.tfvars` file and make sure the `region` variable is set to the one you are using. 
 
 ## Examing the CI/CD pipeline code file
 
