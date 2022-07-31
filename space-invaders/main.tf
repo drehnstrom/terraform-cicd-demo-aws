@@ -23,7 +23,7 @@ resource "aws_instance" "vm" {
   count         = var.instance_count
   ami           = var.image_id
   instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.allow-http.id]
+  vpc_security_group_ids = [aws_security_group.allow-http[0].id]
 
   user_data = file("install_space-invaders.sh")
 
