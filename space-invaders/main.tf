@@ -1,4 +1,5 @@
 resource "aws_security_group" "allow-http" {
+  count       = var.instance_count > 0 ? 1 : 0
   name        = "${var.project}-sec-group-allow-http"
   description = "Enable HTTP Access"
 
@@ -22,7 +23,7 @@ resource "aws_instance" "vm" {
   count         = var.instance_count
   ami           = var.image_id
   instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.allow-http.id]
+  vpc_security_group_ids = [aws_security_group.allow-http[0].id]
 
   user_data = file("install_space-invaders.sh")
 
