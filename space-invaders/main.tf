@@ -1,4 +1,5 @@
 resource "aws_security_group" "allow-http" {
+  count       = var.instance_count > 0 ? 1 : 0
   name        = "${var.project}-sec-group-allow-http"
   description = "Enable HTTP Access"
 
